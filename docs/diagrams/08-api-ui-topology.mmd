@@ -1,0 +1,10 @@
+flowchart LR
+    B["Browser"] --> UI["Streamlit UI<br/>:8501"]
+    UI -- "HTTP only" --> API["FastAPI<br/>:8000"]
+    API --> PIPE["triage pipeline<br/>(same code as CLI)"]
+    PIPE --> JC["Jev client<br/>retry + cache"]
+    JC --> J[("Jev API")]
+    JC --> CA[(".jev_cache/")]
+    style API fill:#E1F5EE,stroke:#0F6E56
+    style PIPE fill:#E1F5EE,stroke:#0F6E56
+    style J fill:#EEEDFE,stroke:#534AB7

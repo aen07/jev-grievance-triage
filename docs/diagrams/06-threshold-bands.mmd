@@ -1,0 +1,15 @@
+flowchart LR
+    subgraph S["Safety flags"]
+        direction LR
+        s1["p < 0.2<br/>clear no"] --- s2["0.2 ≤ p < 0.5<br/>uncertain → REVIEW"] --- s3["p ≥ 0.5<br/>flag set → REVIEW"]
+    end
+    subgraph R["Routine labels"]
+        direction LR
+        r1["p ≤ 0.3<br/>no"] --- r2["0.3 < p < 0.7<br/>uncertain → REVIEW"] --- r3["p ≥ 0.7<br/>yes"]
+    end
+    style s1 fill:#E1F5EE,stroke:#0F6E56
+    style s2 fill:#FAEEDA,stroke:#854F0B
+    style s3 fill:#FCEBEB,stroke:#A32D2D
+    style r1 fill:#E1F5EE,stroke:#0F6E56
+    style r2 fill:#FAEEDA,stroke:#854F0B
+    style r3 fill:#E1F5EE,stroke:#0F6E56

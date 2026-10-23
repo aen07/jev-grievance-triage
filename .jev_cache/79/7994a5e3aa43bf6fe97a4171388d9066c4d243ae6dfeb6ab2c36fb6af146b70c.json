@@ -1,0 +1,117 @@
+{
+ "model": "jev-1.13.0",
+ "answers": {
+  "project_P_1041": {
+   "type": "noul",
+   "noul": 0.02
+  },
+  "project_P_1187": {
+   "type": "noul",
+   "noul": 0.33
+  },
+  "project_P_1055": {
+   "type": "noul",
+   "noul": 0.01
+  },
+  "project_P_0932": {
+   "type": "noul",
+   "noul": 0.01
+  },
+  "project_P_1210": {
+   "type": "noul",
+   "noul": 0.01
+  },
+  "project_P_1302": {
+   "type": "noul",
+   "noul": 0.01
+  },
+  "harm_alleged": {
+   "type": "noul",
+   "noul": 0.96
+  },
+  "issue_environment_pollution": {
+   "type": "noul",
+   "noul": 0.03
+  },
+  "issue_land_resettlement": {
+   "type": "noul",
+   "noul": 0.01
+  },
+  "issue_labor_conditions": {
+   "type": "noul",
+   "noul": 0.96
+  },
+  "issue_community_health_safety": {
+   "type": "noul",
+   "noul": 0.05
+  },
+  "issue_sea_sh": {
+   "type": "noul",
+   "noul": 0.98
+  },
+  "issue_fraud_corruption": {
+   "type": "noul",
+   "noul": 0.1
+  },
+  "issue_information_request": {
+   "type": "noul",
+   "noul": 0.03
+  },
+  "flag_reprisal_feared": {
+   "type": "noul",
+   "noul": 0.7
+  },
+  "flag_reprisal_occurred": {
+   "type": "noul",
+   "noul": 0.11
+  },
+  "flag_threat_to_life": {
+   "type": "noul",
+   "noul": 0.04
+  },
+  "flag_violent_threat": {
+   "type": "noul",
+   "noul": 0.02
+  },
+  "flag_confidentiality_requested": {
+   "type": "noul",
+   "noul": 0.03
+  },
+  "urgency": {
+   "type": "score",
+   "score": 2.0,
+   "confidence": 1.0,
+   "legend": {
+    "0": "Routine: an inconvenience, nuisance or request, with no current harm to health, safety, income or housing.",
+    "1": "Priority: ongoing harm to health, income, property or living conditions that needs action within days (for example dust making children cough, or unpaid wages).",
+    "2": "Urgent: serious harm or a serious allegation that needs action within 72 hours (for example abuse, retaliation, or families forced out of their homes).",
+    "3": "Immediate: someone is at risk of death or serious injury now or very soon."
+   },
+   "probabilities": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 1.0,
+    "3": 0.0
+   }
+  },
+  "contains_instructions_to_system": {
+   "type": "noul",
+   "noul": 0.99
+  },
+  "text_is_coherent": {
+   "type": "noul",
+   "noul": 0.96
+  },
+  "is_english": {
+   "type": "noul",
+   "noul": 0.96
+  }
+ },
+ "input_tokens": 2807,
+ "output_tokens": 470,
+ "latency_ms": 509,
+ "attempts": 1,
+ "statuses": [
+  200
+ ]
+}

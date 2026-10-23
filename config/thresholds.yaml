@@ -1,0 +1,35 @@
+# Thresholds that decide auto_route vs human_review (ED-009).
+# Any change here must bump `version` and get an entry in engineering_decision.md.
+version: "th-2026-10-22.3"
+policy_version: "mdb-grs-p1-p8/2026-10-22.2"
+model: "jev-1.13.0"
+
+# Safety flags: recall-first. flag = p >= flag_at; review band = review_low <= p < flag_at.
+safety:
+  sea_sh:         {flag_at: 0.5, review_low: 0.2}
+  reprisal_risk:  {flag_at: 0.5, review_low: 0.2}
+  threat_to_life: {flag_at: 0.5, review_low: 0.2}
+
+# Cheap-to-be-wrong flag: false positive only redacts a name.
+confidentiality_requested: {flag_at: 0.5, review_low: 0.3}
+
+# Routine nouls: yes if p >= yes_at, no if p <= no_at, in between -> review.
+issue:        {yes_at: 0.7, no_at: 0.3}
+harm_alleged: {yes_at: 0.7, no_at: 0.3}
+
+# Project identification (ED-005).
+project:
+  match: 0.5        # top project must reach this (ED-030: gate on separation, see runner_up_max)
+  runner_up_max: 0.3 # every other project must be at or below this
+  none_max: 0.3     # all projects at or below -> no_matching_project
+
+urgency:
+  min_confidence: 0.5
+
+robustness:
+  injection_review: 0.5   # contains_instructions_to_system >= -> review
+  coherent_min: 0.5       # text_is_coherent < -> unreadable
+  english_min: 0.5        # is_english < -> non_english_input
+  min_chars: 15
+  min_alpha_ratio: 0.5
+  max_chars: 12000

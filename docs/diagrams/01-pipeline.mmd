@@ -1,0 +1,21 @@
+flowchart TD
+    IN["Grievance JSON<br/>(CLI, JSONL batch or HTTP)"] --> V["Validate + preprocess<br/><i>Pydantic, empty / junk / length checks</i>"]
+    V -->|empty text| FS
+    V --> JEV["Jev jev-1.13.0, ONE request<br/><i>22 Nouls + 1 urgency Score</i>"]
+    V --> REG["Registry + filing window<br/><i>date arithmetic in code</i>"]
+    JEV -->|"429 / 529 after 5 retries"| FS["Fail-safe<br/><i>human_review, grs_general,<br/>priority, redact</i>"]
+    JEV --> TH["Threshold bands<br/><i>config/thresholds.yaml, versioned</i>"]
+    REG --> POL
+    TH --> POL["Policy engine P1–P8<br/><i>pure functions in code</i>"]
+    POL --> OUT["TriageOut JSON + audit block<br/><i>Pydantic, action ∈ {auto_route, human_review}</i>"]
+    FS --> OUT
+    OUT -. "optional, after the decision" .-> LLM["LLM letter / reviewer summary<br/><i>labelled llm_generated, never read back</i>"]
+
+    classDef code fill:#E1F5EE,stroke:#0F6E56,color:#04342C
+    classDef jev fill:#EEEDFE,stroke:#534AB7,color:#26215C
+    classDef llm fill:#FAECE7,stroke:#993C1D,color:#4A1B0C,stroke-dasharray: 5 5
+    classDef safe fill:#FAEEDA,stroke:#854F0B,color:#412402
+    class V,REG,TH,POL,OUT code
+    class JEV jev
+    class LLM llm
+    class FS safe

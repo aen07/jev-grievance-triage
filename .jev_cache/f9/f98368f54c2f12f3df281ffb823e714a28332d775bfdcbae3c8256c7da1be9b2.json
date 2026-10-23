@@ -1,0 +1,16 @@
+{
+ "model": "jev-1.13.0",
+ "answers": {
+  "in_window": {
+   "type": "noul",
+   "noul": 0.89
+  }
+ },
+ "input_tokens": 355,
+ "output_tokens": 21,
+ "latency_ms": 50,
+ "attempts": 1,
+ "statuses": [
+  200
+ ]
+}

@@ -1,0 +1,18 @@
+flowchart TD
+    S([Decision from P1–P4]) --> A{"threat to<br/>life?"}
+    A -- yes --> PU[protection_unit]
+    A -- no --> B{sea_sh?}
+    B -- yes --> SEA[sea_specialist]
+    B -- no --> C{"ineligible /<br/>undetermined?"}
+    C -- yes --> G1[grs_general]
+    C -- no --> D{fraud?}
+    D -- yes --> IU[integrity_unit]
+    D -- no --> E{"pollution /<br/>health?"}
+    E -- yes --> SE[safeguards_environment]
+    E -- no --> F{"land /<br/>labor?"}
+    F -- yes --> SS[safeguards_social]
+    F -- no --> H{"info only?"}
+    H -- yes --> IA[info_access_desk]
+    H -- no --> G2[grs_general]
+    classDef unit fill:#E1F5EE,stroke:#0F6E56,color:#04342C
+    class PU,SEA,G1,IU,SE,SS,IA,G2 unit

@@ -1,0 +1,13 @@
+flowchart TB
+    Q["Jev question<br/><i>issue_sea_sh</i>"] --> P["Probability<br/><b>0.99</b>"]
+    P --> T{"Threshold<br/>flag_at 0.5"}
+    T -->|"0.99 ≥ 0.5"| F["Flag<br/>sea_sh = true"]
+    F --> R1["P5 row 2<br/>route_to = sea_specialist"]
+    F --> R2["P4 floor<br/>urgency ≥ urgent"]
+    F --> R3["P6<br/>action = human_review"]
+    F --> R4["P7<br/>redact_identity = true"]
+    R1 & R2 & R3 & R4 --> AU[("Audit block<br/>model jev-1.13.0 · thresholds th-…3<br/>policy …2 · raw answers")]
+    style P fill:#EEEDFE,stroke:#534AB7
+    style T fill:#FAEEDA,stroke:#854F0B
+    style F fill:#FCEBEB,stroke:#A32D2D
+    style AU fill:#F1EFE8,stroke:#5F5E5A

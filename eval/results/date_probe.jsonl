@@ -1,0 +1,6 @@
+{"received_at": "2026-10-05", "closing": "2022-03-31", "jev_p_in_window": 0.04, "code_in_window": false, "model": "jev-1.13.0"}
+{"received_at": "2024-03-31", "closing": "2022-03-31", "jev_p_in_window": 0.94, "code_in_window": true, "model": "jev-1.13.0"}
+{"received_at": "2024-04-01", "closing": "2022-03-31", "jev_p_in_window": 0.89, "code_in_window": false, "model": "jev-1.13.0"}
+{"received_at": "2027-09-30", "closing": "2025-09-30", "jev_p_in_window": 0.92, "code_in_window": true, "model": "jev-1.13.0"}
+{"received_at": "2026-10-02", "closing": "2025-09-30", "jev_p_in_window": 0.96, "code_in_window": true, "model": "jev-1.13.0"}
+{"received_at": "2028-01-15", "closing": "2025-09-30", "jev_p_in_window": 0.2, "code_in_window": false, "model": "jev-1.13.0"}

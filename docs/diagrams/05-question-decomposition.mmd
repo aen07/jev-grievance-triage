@@ -1,0 +1,13 @@
+flowchart LR
+    F["flag_reprisal_feared<br/><i>fears retaliation for complaining</i>"] --> R{"max"}
+    O["flag_reprisal_occurred<br/><i>already retaliated against</i>"] --> R
+    R --> RR["reprisal_risk"]
+    T["flag_threat_to_life<br/><i>present physical danger</i>"] --> M{"max"}
+    W["flag_violent_threat<br/><i>threat to kill / beating</i>"] --> M
+    M --> TT["threat_to_life"]
+    I["issue_information_request"] --> N{"AND"}
+    H["harm_alleged = no"] --> N
+    N --> NA["not_applicable"]
+    style R fill:#E1F5EE,stroke:#0F6E56
+    style M fill:#E1F5EE,stroke:#0F6E56
+    style N fill:#E1F5EE,stroke:#0F6E56

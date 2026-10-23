@@ -1,0 +1,8 @@
+flowchart LR
+    JEV["<b>Jev answers</b><br/><i>probabilities only</i><br/><br/>Which project? · 6 Nouls<br/>Harm alleged?<br/>7 issue labels<br/>sea_sh · reprisal ×2 · threat ×2<br/>Confidentiality requested?<br/>Base urgency · Score<br/>Injection? Coherent? English?"]
+    CODE["<b>Code decides</b><br/><i>deterministic, unit-tested</i><br/><br/>Validation, junk, truncation<br/>Filing window · 24 months<br/>Thresholds → booleans<br/>not_applicable · other<br/>Urgency floors · P4<br/>Routing + also_notify · P5<br/>action + review_reasons · P6<br/>redact_identity · P7 · audit · P8"]
+    LLMB["<b>LLM</b><br/><i>optional, after the decision</i><br/><br/>Acknowledgment letter<br/>Reviewer summary<br/>labelled llm_generated<br/>never read back"]
+    JEV --> CODE -. "final TriageOut" .-> LLMB
+    style JEV fill:#EEEDFE,stroke:#534AB7,color:#26215C
+    style CODE fill:#E1F5EE,stroke:#0F6E56,color:#04342C
+    style LLMB fill:#FAECE7,stroke:#993C1D,color:#4A1B0C,stroke-dasharray: 5 5

@@ -1,0 +1,24 @@
+sequenceDiagram
+    autonumber
+    actor U as Reviewer (Streamlit)
+    participant A as FastAPI
+    participant P as Pipeline (code)
+    participant C as Jev client
+    participant J as Jev API
+
+    U->>A: POST /triage {grievance}
+    A->>P: triage_one(raw)
+    P->>P: validate (Pydantic) + preprocess
+    P->>C: ask(state, 23 questions)
+    alt answer cached (replay or live)
+        C-->>P: recorded answers
+    else not cached
+        loop up to 5 attempts on 408/429/5xx/529
+            C->>J: POST /v1/systemone (model jev-1.13.0)
+            J-->>C: probabilities + model + usage
+        end
+        C-->>P: answers, attempts, statuses
+    end
+    P->>P: thresholds → P1…P8 → audit block
+    P-->>A: TriageOut
+    A-->>U: decision + raw Jev answers

@@ -1,0 +1,390 @@
+{
+  "baseline": {
+    "n": 34,
+    "field_accuracy": {
+      "eligibility.status": {
+        "acc": 0.96875,
+        "n": 32
+      },
+      "eligibility.project_id": {
+        "acc": 0.9615384615384616,
+        "n": 26
+      },
+      "issues": {
+        "acc": 0.96,
+        "n": 25
+      },
+      "flags": {
+        "acc": 0.967741935483871,
+        "n": 31
+      },
+      "urgency": {
+        "acc": 0.9565217391304348,
+        "n": 23
+      },
+      "route_to": {
+        "acc": 0.9642857142857143,
+        "n": 28
+      },
+      "also_notify": {
+        "acc": 0.9444444444444444,
+        "n": 18
+      },
+      "redact_identity": {
+        "acc": 1.0,
+        "n": 20
+      },
+      "action": {
+        "acc": 0.9,
+        "n": 30
+      },
+      "eligibility.reasons": {
+        "acc": 1.0,
+        "n": 4
+      },
+      "review_reasons": {
+        "acc": 1.0,
+        "n": 5
+      }
+    },
+    "all_fields_correct": 0.8529411764705882,
+    "flags": {
+      "sea_sh": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "tn": 26,
+        "tp": 5
+      },
+      "reprisal_risk": {
+        "precision": 0.8,
+        "recall": 1.0,
+        "tn": 23,
+        "tp": 4,
+        "fp": 1
+      },
+      "threat_to_life": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "tn": 26,
+        "tp": 4
+      },
+      "confidentiality_requested": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "tn": 26,
+        "tp": 3
+      }
+    },
+    "issues": {
+      "environment_pollution": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 2,
+        "tn": 10
+      },
+      "land_resettlement": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "tn": 9,
+        "tp": 3
+      },
+      "labor_conditions": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "tn": 9,
+        "tp": 3
+      },
+      "community_health_safety": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "tp": 1,
+        "tn": 10,
+        "fp": 1
+      },
+      "sea_sh": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "tn": 10,
+        "tp": 2
+      },
+      "fraud_corruption": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "tn": 10,
+        "tp": 2
+      },
+      "information_request": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "tn": 9,
+        "tp": 3
+      },
+      "other": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "tn": 11,
+        "tp": 1
+      }
+    },
+    "human_review_rate": 0.7647058823529411,
+    "over_review": {
+      "n_expected_auto": 9,
+      "sent_to_review": 3
+    },
+    "under_review": [],
+    "missed_safety_cases": [],
+    "review_reason_counts": {
+      "safety_reprisal_risk": 8,
+      "eligibility_ineligible": 7,
+      "safety_sea_sh": 5,
+      "safety_threat_to_life": 5,
+      "uncertain_issue_fraud_corruption": 3,
+      "uncertain_urgency": 2,
+      "eligibility_undetermined": 2,
+      "possible_injection": 2,
+      "non_english_input": 2,
+      "unreadable_input": 2,
+      "uncertain_project": 1,
+      "uncertain_issue_community_health_safety": 1,
+      "uncertain_issue_land_resettlement": 1
+    },
+    "latency_ms": {
+      "p50": 391,
+      "p95": 571,
+      "mean": 382.8787878787879
+    },
+    "input_tokens": {
+      "mean": 2784.3333333333335,
+      "max": 2936
+    },
+    "cost_usd_per_grievance": 0.000116942,
+    "models": {
+      "jev-1.13.0": 33,
+      "null": 1
+    },
+    "failures": [
+      {
+        "id": "T-002",
+        "failed": [
+          "action"
+        ],
+        "tags": [
+          "routine",
+          "fraud"
+        ]
+      },
+      {
+        "id": "T-004",
+        "failed": [
+          "urgency",
+          "action"
+        ],
+        "tags": [
+          "routine",
+          "labor",
+          "closed_in_window"
+        ]
+      },
+      {
+        "id": "T-006",
+        "failed": [
+          "eligibility.status",
+          "eligibility.project_id",
+          "route_to",
+          "also_notify",
+          "action"
+        ],
+        "tags": [
+          "mixed_info_and_complaint",
+          "land"
+        ]
+      },
+      {
+        "id": "T-015",
+        "failed": [
+          "flags"
+        ],
+        "tags": [
+          "safety",
+          "sea_sh",
+          "euphemism"
+        ]
+      },
+      {
+        "id": "T-020",
+        "failed": [
+          "issues"
+        ],
+        "tags": [
+          "negation"
+        ]
+      }
+    ]
+  },
+  "sweep": [
+    {
+      "name": "baseline",
+      "human_review_rate": 0.7647058823529411,
+      "missed_safety_cases": [],
+      "flags": {
+        "sea_sh": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 26,
+          "tp": 5
+        },
+        "reprisal_risk": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "tn": 23,
+          "tp": 4,
+          "fp": 1
+        },
+        "threat_to_life": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 26,
+          "tp": 4
+        },
+        "confidentiality_requested": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 26,
+          "tp": 3
+        }
+      },
+      "all_fields_correct": 0.8529411764705882
+    },
+    {
+      "name": "safety -0.1",
+      "human_review_rate": 0.8235294117647058,
+      "missed_safety_cases": [],
+      "flags": {
+        "sea_sh": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 26,
+          "tp": 5
+        },
+        "reprisal_risk": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "tn": 23,
+          "tp": 4,
+          "fp": 1
+        },
+        "threat_to_life": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 26,
+          "tp": 4
+        },
+        "confidentiality_requested": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 26,
+          "tp": 3
+        }
+      },
+      "all_fields_correct": 0.8529411764705882
+    },
+    {
+      "name": "safety +0.1",
+      "human_review_rate": 0.7647058823529411,
+      "missed_safety_cases": [],
+      "flags": {
+        "sea_sh": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 26,
+          "tp": 5
+        },
+        "reprisal_risk": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 24,
+          "tp": 4
+        },
+        "threat_to_life": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 26,
+          "tp": 4
+        },
+        "confidentiality_requested": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 26,
+          "tp": 3
+        }
+      },
+      "all_fields_correct": 0.8823529411764706
+    },
+    {
+      "name": "routine -0.1",
+      "human_review_rate": 0.7647058823529411,
+      "missed_safety_cases": [],
+      "flags": {
+        "sea_sh": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 26,
+          "tp": 5
+        },
+        "reprisal_risk": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "tn": 23,
+          "tp": 4,
+          "fp": 1
+        },
+        "threat_to_life": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 26,
+          "tp": 4
+        },
+        "confidentiality_requested": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 26,
+          "tp": 3
+        }
+      },
+      "all_fields_correct": 0.8529411764705882
+    },
+    {
+      "name": "routine +0.1",
+      "human_review_rate": 0.7352941176470589,
+      "missed_safety_cases": [],
+      "flags": {
+        "sea_sh": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 26,
+          "tp": 5
+        },
+        "reprisal_risk": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "tn": 23,
+          "tp": 4,
+          "fp": 1
+        },
+        "threat_to_life": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 26,
+          "tp": 4
+        },
+        "confidentiality_requested": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 26,
+          "tp": 3
+        }
+      },
+      "all_fields_correct": 0.8235294117647058
+    }
+  ]
+}
